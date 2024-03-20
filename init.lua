@@ -17,3 +17,4 @@ local tips = read_tips()
 -- relitive line numbers
 vim.wo.relativenumber = true
 vim.g.startify_custom_header = tips
+
