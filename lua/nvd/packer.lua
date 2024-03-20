@@ -57,4 +57,8 @@ use {
   },
 }
 use 'mhinz/vim-startify'
+-- theme
+
+use 'sainnhe/everforest'
+use 'sainnhe/sonokai'
 end)

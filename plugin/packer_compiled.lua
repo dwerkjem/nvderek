@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  everforest = {
+    loaded = true,
+    path = "/home/derek/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   harpoon = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/poimandres.nvim",
     url = "https://github.com/olivercederborg/poimandres.nvim"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/home/derek/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   ["telescope.nvim"] = {
     loaded = true,
