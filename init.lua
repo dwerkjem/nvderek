@@ -1,5 +1,5 @@
 require("nvd.config")
-
+require("mason").setup()
 vim.cmd.colorscheme("sonokai")
 -- set the neovim welcome message to be tips.txt
 local function read_tips()
@@ -15,4 +15,6 @@ local function read_tips()
 end
 
 local tips = read_tips()
+-- relitive line numbers
+vim.wo.relativenumber = true
 vim.g.startify_custom_header = tips
