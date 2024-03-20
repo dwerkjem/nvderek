@@ -51,4 +51,10 @@ use 'mhinz/vim-startify'
 
 use 'sainnhe/everforest'
 use 'sainnhe/sonokai'
+use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup()
+    end,
+})
 end)
