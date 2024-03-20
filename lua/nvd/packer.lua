@@ -1,60 +1,61 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+return require("packer").startup(function(use)
+	-- Packer can manage itself
+	use("wbthomason/packer.nvim")
 
-  use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.6',
--- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
--- Lua
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.6",
+		-- or                            , branch = '0.1.x',
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+	-- Lua
 
-use { 
-  'olivercederborg/poimandres.nvim',
-  config = function()
-    require('poimandres').setup {
-      -- leave this setup function empty for default config
-      -- or refer to the configuration section
-      -- for configuration options
-    }
-  end
-}
-use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-use 'mbbill/undotree'
-use('tpope/vim-fugitive')
-use('github/copilot.vim')
-use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
-use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim",} }
-}
-use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional
-  },
-}
-use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-}
-use 'mfussenegger/nvim-lint'
-use 'mhinz/vim-startify'
--- theme
+	use({
+		"olivercederborg/poimandres.nvim",
+		config = function()
+			require("poimandres").setup({
+				-- leave this setup function empty for default config
+				-- or refer to the configuration section
+				-- for configuration options
+			})
+		end,
+	})
+	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+	use("mbbill/undotree")
+	use("tpope/vim-fugitive")
+	use("github/copilot.vim")
+	use("nvim-lua/plenary.nvim") -- don't forget to add this one if you don't have it yet!
+	use({
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+	})
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
+	use("mfussenegger/nvim-lint")
+	use("mhinz/vim-startify")
+	-- theme
 
-use 'sainnhe/everforest'
-use 'sainnhe/sonokai'
-use({
-    "stevearc/conform.nvim",
-    config = function()
-      require("conform").setup()
-    end,
-})
+	use("sainnhe/everforest")
+	use("sainnhe/sonokai")
+	use({
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup()
+		end,
+	})
 end)
