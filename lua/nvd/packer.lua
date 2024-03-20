@@ -56,4 +56,5 @@ use {
     'nvim-tree/nvim-web-devicons', -- optional
   },
 }
+use 'mhinz/vim-startify'
 end)
