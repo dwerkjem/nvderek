@@ -45,7 +45,7 @@ use {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
 }
-
+use 'mfussenegger/nvim-lint'
 use 'mhinz/vim-startify'
 -- theme
 

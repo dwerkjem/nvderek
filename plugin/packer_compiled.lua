@@ -74,16 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/home/derek/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/home/derek/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -99,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/home/derek/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -114,10 +99,10 @@ _G.packer_plugins = {
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["nvim-cmp"] = {
+  ["nvim-lint"] = {
     loaded = true,
-    path = "/home/derek/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
+    path = "/home/derek/.local/share/nvim/site/pack/packer/start/nvim-lint",
+    url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
