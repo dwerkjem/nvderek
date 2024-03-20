@@ -56,6 +56,12 @@ use {
     'nvim-tree/nvim-web-devicons', -- optional
   },
 }
+use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+}
+
 use 'mhinz/vim-startify'
 -- theme
 
