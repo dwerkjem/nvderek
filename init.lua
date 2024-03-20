@@ -1,5 +1,4 @@
 require("nvd.config")
-require("mason").setup()
 vim.cmd.colorscheme("sonokai")
 -- set the neovim welcome message to be tips.txt
 local function read_tips()
