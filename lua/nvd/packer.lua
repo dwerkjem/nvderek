@@ -48,6 +48,12 @@ use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it
 use {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    requires = { {"nvim-lua/plenary.nvim",} }
+}
+use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional
+  },
 }
 end)
