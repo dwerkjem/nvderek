@@ -12,4 +12,8 @@ end
 local map = vim.keymap.set
 map('i', '<C-l>', SuggestOneCharacter, {expr = true, remap = false})
 map('i', '<C-right>', SuggestOneWord, {expr = true, remap = false})
-
+vim.g.copilot_filetypes = {markdown = true,
+	txt = true,
+	teal = true,
+	["*"] = true,
+	}
