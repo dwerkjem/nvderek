@@ -73,4 +73,9 @@ return require("packer").startup(function(use)
 		},
 	})
 	use("m4xshen/autoclose.nvim")
+	-- luasnip setup
+	use({
+		"L3MON4D3/LuaSnip",
+		requires = { "rafamadriz/friendly-snippets" },
+	})
 end)

@@ -6,6 +6,7 @@ local has_words_before = function()
 end
 
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -45,6 +46,7 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer" },
 	}),

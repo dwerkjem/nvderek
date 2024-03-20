@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/derek/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["autoclose.nvim"] = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/derek/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/derek/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   harpoon = {
     loaded = true,
