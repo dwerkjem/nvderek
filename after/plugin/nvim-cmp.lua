@@ -49,7 +49,10 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer" },
+		{ name = "command"},
+		{ name = "zsh"},
 	}),
+
 })
 
 -- Set configuration for specific filetype.

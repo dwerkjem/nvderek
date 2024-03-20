@@ -1,6 +1,7 @@
 require("lint").linters_by_ft = {
 	lua = { "selene" },
 	python = { "flake8", "mypy" },
+	sh = { "shellcheck" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
