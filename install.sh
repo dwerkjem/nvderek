@@ -19,3 +19,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 cd ~/.config/nvim || exit
 nvim --headless +PackerSync
+
+
