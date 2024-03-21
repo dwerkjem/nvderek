@@ -1,19 +1,15 @@
-require("nvd.config")
-vim.cmd.colorscheme("sonokai")
--- set the neovim welcome message to be tips.txt
-local function read_tips()
-  local tips = {}
-  local file = io.open(vim.fn.stdpath("config") .. "/tips.txt", "r")
-  if file then
-    for line in file:lines() do
-      table.insert(tips, line)
-    end
-    file:close()
-  end
-  return tips
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local tips = read_tips()
--- relitive line numbers
-vim.wo.relativenumber = true
-vim.g.startify_custom_header = tips
+require("vim-options")
+require("lazy").setup("plugins")
