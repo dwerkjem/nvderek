@@ -8,6 +8,10 @@ local function SuggestOneWord()
   local bar = vim.fn['copilot#TextQueuedForInsertion']()
   return vim.fn.split(bar,  [[[ .]\zs]])[1]
 end
+vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false})
+vim.g.copilot_no_tab_map = true
 
 local map = vim.keymap.set
 map('i', '<C-l>', SuggestOneCharacter, {expr = true, remap = false})
@@ -20,5 +24,3 @@ config = function()
     }
   end
 }
-
-

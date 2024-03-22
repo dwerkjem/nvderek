@@ -18,9 +18,12 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 vim.o.timeoutlen = 10000
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
--- set a spell check keymap
+-- set a keymap to toggled spell check
 
-vim.keymap.set('n', '<leader>ss', ':set spell spelllang=en_us<CR>')
+vim.keymap.set('n', '<F2>', ':set spell!<CR>')
+vim.opt.spell = false
+
+-- lsp auto commands
+-- on cursor hold show diagnostics and however
