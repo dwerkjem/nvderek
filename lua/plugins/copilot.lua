@@ -13,4 +13,12 @@ local map = vim.keymap.set
 map('i', '<C-l>', SuggestOneCharacter, {expr = true, remap = false})
 map('i', '<C-right>', SuggestOneWord, {expr = true, remap = false})
 
-return{"github/copilot.vim"}
+return{"github/copilot.vim",
+config = function()
+    local copilot_filetypes = {
+      ['*'] = true
+    }
+  end
+}
+
+
