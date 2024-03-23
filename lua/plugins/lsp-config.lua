@@ -28,6 +28,8 @@ local mason_packages = {
 	"prettier",
 	"shellcheck",
 	"gitlint",
+	"selene",
+	"vint",
 }
 
 local function ensure_packages_installed()
