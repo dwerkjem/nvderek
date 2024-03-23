@@ -1,93 +1,90 @@
--- Function to check if a Mason package is installed
 local function is_package_installed(package_name)
-  local result = vim.fn.system("mason list | grep '" .. package_name .. "'")
-  return result ~= ""
+	-- Adjust the path according to your Mason packages installation directory
+	local mason_package_path = vim.fn.stdpath("data") .. "/mason/packages/" .. package_name
+	return vim.fn.isdirectory(mason_package_path) ~= 0
 end
 
--- Function to install a Mason package
 local function install_package(package_name)
-  vim.fn.system("mason install " .. package_name)
+	-- Use vim.api.nvim_exec to execute the MasonInstall command and capture any errors
+	local ok, err = pcall(function()
+		vim.api.nvim_command("MasonInstall " .. package_name)
+	end)
+
+	if not ok then
+		print("Error installing " .. package_name .. ": " .. err)
+	else
+		print(package_name .. " installed successfully.")
+	end
 end
 
--- Define a list of Mason packages to be installed
 local mason_packages = {
-  "lua-ls",
-  "tsserver",
-  "html",
-  "pyright",
-  "solargraph",
-  "eslint",
-  "prettier",
-  "pylint",
-  "flake8",
-  "lua-language-server",
-
+	"pyright",
+	"lua-language-server",
+	"stylua",
+	"html-lsp",
 }
 
--- Main function to ensure all Mason packages are installed
 local function ensure_packages_installed()
-  for _, package in ipairs(mason_packages) do
-    if not is_package_installed(package) then
-      print("Installing " .. package .. "...")
-      install_package(package)
-    else
-    end
-  end
+	for _, package in ipairs(mason_packages) do
+		if not is_package_installed(package) then
+			print("Installing " .. package .. "...")
+			install_package(package)
+		else
+		end
+	end
 end
 
--- Call the main function to ensure all Mason packages are installed
-ensure_packages_installed()
-
 return {
-  {
-    "williamboman/mason.nvim",
-    lazy = false,
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    opts = {
-      ensure_installed = { "tsserver", "html", "lua_ls", "pyright" },
-      auto_install = true,
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    lazy = false,
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			require("mason").setup()
+			ensure_packages_installed()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		opts = {
+			ensure_installed = { "tsserver", "html", "lua_ls", "pyright" },
+			auto_install = true,
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.solargraph.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
+			local lspconfig = require("lspconfig")
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.solargraph.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
 
-      -- Keymaps
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			-- Keymaps
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
-      -- Diagnostics should appear when cursor hovers over the line
-      vim.lsp.handlers["textDocument/publishDiagnostics"] =
-          vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-            underline = true,
-            virtual_text = false,
-            signs = true,
-            update_in_insert = true,
-          })
-    end,
-  },
+			-- Diagnostics should appear when cursor hovers over the line
+			vim.lsp.handlers["textDocument/publishDiagnostics"] =
+				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+					underline = true,
+					virtual_text = false,
+					signs = true,
+					update_in_insert = true,
+				})
+		end,
+	},
 }
