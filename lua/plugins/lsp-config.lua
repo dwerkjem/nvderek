@@ -1,5 +1,4 @@
 local function is_package_installed(package_name)
-	-- Adjust the path according to your Mason packages installation directory
 	local mason_package_path = vim.fn.stdpath("data") .. "/mason/packages/" .. package_name
 	return vim.fn.isdirectory(mason_package_path) ~= 0
 end
@@ -22,6 +21,13 @@ local mason_packages = {
 	"lua-language-server",
 	"stylua",
 	"html-lsp",
+	"pylint",
+	"flake8",
+	"black",
+	"isort",
+	"prettier",
+	"shellcheck",
+	"gitlint",
 }
 
 local function ensure_packages_installed()
