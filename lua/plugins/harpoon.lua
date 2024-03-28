@@ -1,17 +1,10 @@
-local harpoon = require("harpoon")
-
--- REQUIRED
-harpoon:setup()
--- REQUIRED
-
-vim.keymap.set("n", "<leader>", function()
-	harpoon:list():append()
-end)
-vim.keymap.set("n", "<C-e>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
+-- Fixed and improved mapping for adding the current file to Harpoon
+vim.keymap.set("n", "<leader>a", function()
+	require("harpoon.mark").add_file()
 end)
 
-vim.keymap.set("n", "<C-1", function()
+-- Corrected key mapping for <C-1>
+vim.keymap.set("n", "<C-1>", function()
 	harpoon:list():select(1)
 end)
 vim.keymap.set("n", "<C-2>", function()
