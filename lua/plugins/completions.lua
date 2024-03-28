@@ -65,15 +65,18 @@ return {
 					{ name = "treesitter" },
 					{ name = "spell" },
 					{ name = "tags" },
-					{
-						name = "buffer",
-						option = {
-							get_bufnrs = function()
-								return vim.api.nvim_list_bufs()
-							end,
-						},
-					},
 					{ name = "path" },
+					cmp.setup({
+						sources = {
+							{
+								name = "buffer",
+								-- Correct:
+								option = {
+									keyword_pattern = [[\k\+]],
+								},
+							},
+						},
+					}),
 					{
 						name = "spell",
 						option = {
