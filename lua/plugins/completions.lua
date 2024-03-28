@@ -65,10 +65,26 @@ return {
 					{ name = "treesitter" },
 					{ name = "spell" },
 					{ name = "tags" },
+					{
+						name = "buffer",
+						option = {
+							get_bufnrs = function()
+								return vim.api.nvim_list_bufs()
+							end,
+						},
+					},
+					{ name = "path" },
+					{
+						name = "spell",
+						option = {
+							keep_all_entries = false,
+							enable_in_context = function()
+								return true
+							end,
+						},
+					},
 					{ name = "latex" },
 					{ name = "luasnip" }, -- For luasnip users.
-				}, {
-					{ name = "buffer" },
 				}),
 			})
 		end,
