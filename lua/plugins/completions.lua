@@ -70,9 +70,10 @@ return {
 						sources = {
 							{
 								name = "buffer",
-								-- Correct:
-								option = {
-									keyword_pattern = [[\k\+]],
+								options = {
+									get_bufnrs = function()
+										return vim.api.nvim_list_bufs()
+									end,
 								},
 							},
 						},
