@@ -9,11 +9,11 @@ vim.g.background = "light"
 vim.opt.swapfile = false
 
 -- Navigate vim panes better
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
-
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>k", "<cmd>Telescope thesaurus lookup<CR>")
 -- Set time out to 10 Seconds
 
 vim.o.timeoutlen = 10000
@@ -22,7 +22,7 @@ vim.wo.number = true
 
 -- set a keymap to toggled spell check
 
-vim.keymap.set('n', '<F2>', ':set spell!<CR>')
+vim.keymap.set("n", "<F2>", ":set spell!<CR>")
 vim.opt.spell = false
 
 -- lsp auto commands
