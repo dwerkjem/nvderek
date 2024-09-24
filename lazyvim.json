@@ -20,7 +20,6 @@
     "lazyvim.plugins.extras.editor.mini-files",
     "lazyvim.plugins.extras.editor.mini-move",
     "lazyvim.plugins.extras.editor.outline",
-    "lazyvim.plugins.extras.editor.overseer",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.linting.eslint",
