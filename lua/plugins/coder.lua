@@ -22,11 +22,16 @@ return {
         -- Optional: Additional configurations
         mode = "float", -- Can be 'float', 'terminal', or 'toggleterm'
         startinsert = true,
-        focus = false,
+        focus = true,
         term = {
+
           -- Terminal options if using 'terminal' mode
           -- direction = "horizontal",
           -- size = 10,
+        },
+        float = {
+          border = "double",
+          style = "minimal",
         },
       })
     end,
